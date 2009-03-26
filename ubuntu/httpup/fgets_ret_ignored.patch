@@ -1,0 +1,24 @@
+Only in httpup-0.4.0j: argparser.o
+Only in httpup-0.4.0j: configparser.o
+Only in httpup-0.4.0j: fileutils.o
+Only in httpup-0.4.0j: httpup
+Only in httpup-0.4.0j: httpupargparser.o
+Only in httpup-0.4.0j: httpup.o
+diff -u httpup-0.4.0j.orig/main.cpp httpup-0.4.0j/main.cpp
+--- httpup-0.4.0j.orig/main.cpp	2008-06-24 15:00:30.000000000 +0300
++++ httpup-0.4.0j/main.cpp	2009-03-26 18:59:25.000000000 +0200
+@@ -62,7 +62,10 @@
+             exit(-1);
+         }
+         char urlBuf[512];
+-        fgets(urlBuf, 512, fp);
++	char *urlPart;
++        if (NULL == (urlPart = fgets(urlBuf, 512, fp))) {
++	    exit(-2);
++	}
+         url = urlBuf;
+     }
+ 
+Only in httpup-0.4.0j: main.cpp~
+Only in httpup-0.4.0j: main.o
+Only in httpup-0.4.0j: md5.o
