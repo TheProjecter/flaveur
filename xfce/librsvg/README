@@ -1,0 +1,27 @@
+
+  ----------------------------------------------------------------------------
+
+POST-INSTALL:
+
+
+
+    * For this application to work properly with SVG-based themes, you
+      must update your gdk-pixbuf.loaders:
+
+	# gdk-pixbuf-query-loaders > /usr/etc/gtk-2.0/gdk-pixbuf.loaders
+
+
+
+  ----------------------------------------------------------------------------
+
+POST-REMOVE:
+
+
+
+    * Remove the svg loaders from your gdk-pixbuf.loaders:
+
+	# gdk-pixbuf-query-loaders > /usr/etc/gtk-2.0/gdk-pixbuf.loaders
+
+
+
+  ----------------------------------------------------------------------------

@@ -1,0 +1,18 @@
+# Description:	transfer files to/from any OBEX enabled device
+# URL:		http://openobex.sourceforge.net/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	openobex, bluez
+
+name=obexftp
+version=0.23
+release=1
+source=(http://triq.net/obexftp/$name-$version.tar.bz2)
+
+build () {
+	cd $name-$version
+	./configure --prefix=/usr --mandir=/usr/man
+	make
+	make DESTDIR=$PKG install
+	find $PKG -name .packlist -or -name '*.bs' -or -name perllocal.pod -exec rm {} \;
+}
+

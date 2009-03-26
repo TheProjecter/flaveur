@@ -1,0 +1,22 @@
+# Description: Redland RDF Libraries
+# URL: http://librdf.org
+# Packager: Hannes Mayer, kontakr at ecarux dot de
+# Maintainer:Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on: libxml2, raptor, rasqal
+
+name=redland
+version=1.0.8
+release=1
+source=(http://download.librdf.org/source/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/gtk-doc
+
+	chown -R root:root $PKG
+}

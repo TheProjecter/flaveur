@@ -1,0 +1,16 @@
+# Description:	Mueller English-Russian Dictionary database for dictd
+# URL:		http://www.math.sunysb.edu/~comech/tools/dict-mueller.html
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Packager:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	dictd
+
+name=dict-mueller
+version=20020227-lenny
+release=pre
+source=(http://my.lifegears.org/crux/mueller7.dict.dz \
+	http://my.lifegears.org/crux/mueller7.index)
+
+build() {
+	mkdir -p $PKG/usr/share/dict
+	install -m644 mueller7* $PKG/usr/share/dict
+}

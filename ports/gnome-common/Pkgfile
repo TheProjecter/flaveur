@@ -1,0 +1,17 @@
+# Description: A collection of common utilities for the GNOME project
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Group: gnome
+
+name=gnome-common
+version=2.24.0
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/$name/2.24/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

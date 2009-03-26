@@ -1,0 +1,42 @@
+# Description:	Linux Pluggable Authentification Modules (PAM)
+# URL:		http://www.kernel.org/pub/linux/libs/pam/
+# Maintainer:	Oleksiy V. Khilkevich <centericq at ukr.net>
+# Packager:	Oleksiy V. Khilkevich <centericq at ukr.net>
+# Depends on:	cracklib, cracklib-words
+
+name=linux-pam
+version=1.0.4
+release=1
+
+source=(http://www.kernel.org/pub/linux/libs/pam/library/Linux-PAM-${version}.tar.bz2 pamd.system-auth pamd.other etc.environment)
+
+build () {
+    cd Linux-PAM-$version
+
+    CFLAGS="$CFLAGS -I../libpam_misc/include"
+    CFLAGS="$CFLAGS -I../libpamc/include"
+
+    ./configure --disable-nls \
+	--disable-prelude \
+	--sysconfdir=/etc \
+	--localstatedir=/var \
+	--libexecdir=/usr/lib \
+	--mandir=/usr/man \
+	--enable-securedir=/lib/security \
+	--enable-shared \
+	--with-mailspool=/var/spool/mail \
+	--enable-read-both-confs
+    
+    make
+    make install DESTDIR=$PKG
+    
+    mkdir -p $PKG/etc/pam.d
+   
+    # Install PAM service files
+    install -m 644 $SRC/pamd.system-auth $PKG/etc/pam.d/system-auth
+    install -m 644 $SRC/pamd.other $PKG/etc/pam.d/other
+    install -m 644 $SRC/etc.environment $PKG/etc/environment
+
+    # Junks
+    rm -rf $PKG/usr/share
+}

@@ -1,0 +1,33 @@
+# Description:	KDE Base (SVN)
+# URL:		http://www.kde.org
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	kdesupport, kdelibs, kdepimlibs, gmm, glew, gsl
+# more to find: spnav, openctl, graphicsmaguck
+
+name=koffice
+version=1.9.98.7
+release=1
+source=()
+upstream=svn://anonsvn.kde.org/home/kde/tags/$name/$version/$name
+
+build() {
+    cd $PKGMK_SOURCE_DIR
+ 
+    if [ -d $name ]; then
+	svn switch $upstream $name
+	svn up $name
+    else
+	svn checkout $upstream $name
+    fi
+    svn export $name $SRC/$name
+
+    mkdir $SRC/build
+    cd $SRC/build
+
+    cmake $SRC/$name \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_BUILD_TYPE=Release
+
+    make
+    make DESTDIR=$PKG install
+}

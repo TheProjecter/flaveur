@@ -1,0 +1,26 @@
+# Description: GNOME desktop environment power manager
+# URL: http://www.gnome.org/projects/gnome-power-manager/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: dbus, hal, libgnomeui, libglade, libnotify, notification-daemon, gnome-panel
+# Group: gnome/desktop
+
+name=gnome-power-manager
+version=2.24.2
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/man \
+		--libexecdir=/usr/lib/$name \
+		--disable-schemas-install \
+		--disable-scrollkeeper
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/gtk-doc
+}

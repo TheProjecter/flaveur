@@ -1,0 +1,31 @@
+# Description:	client and server that implement RFC 2229 DICT protocol
+# URL:		http://dict.sf.net/
+# Packager:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	libmaa
+
+name=dictd
+version=1.11.1
+release=1
+source=(http://dl.sf.net/dict/${name}-${version}.tar.gz \
+	dictd.conf \
+	dict.conf \
+	dictd)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --libexecdir=/usr/lib \
+                --sysconfdir=/etc/dict \
+		--mandir=/usr/man \
+                --with-cflags="${CFLAGS}" 
+    make
+    make DESTDIR=$PKG install
+
+    mkdir -p $PKG/etc/dict $PKG/etc/rc.d
+
+    install -m 0755 ../*.conf $PKG/etc/dict
+    install -D -m 0755 ../dictd $PKG/etc/rc.d/dictd
+}
+
+# End of file

@@ -1,0 +1,21 @@
+# Description:	GPL'ed reader of DjVu format
+# URL:		http://djvulibre.djvuzone.org/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+
+name=djvulibre
+version=3.5.21
+release=1
+source=(http://dl.sourceforge.net/sourceforge/djvu/$name-$version.tar.gz)
+
+build() {
+	cd $name-*
+	./configure --prefix=/usr \
+	    --mandir=/usr/man \
+	    --enable-threads \
+	    --disable-djview \
+	    --disable-i18n
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/djvu/osi/{cs,de,fr,ja,zh}
+}

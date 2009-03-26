@@ -1,0 +1,18 @@
+# Description:	printer support within Xfce
+# URL:		http://www.xfce.org
+# Packager:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	libxfcegui4, libxfce4util, xfconf, cups
+# Group:	xfce4
+
+name=xfprint
+version=4.6.0
+release=1
+source=(http://mocha.xfce.org/archive/xfce-4.6.0/src/$name-$version.tar.bz2)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr
+    make 
+    make DESTDIR=$PKG install
+}

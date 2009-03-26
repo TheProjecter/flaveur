@@ -1,0 +1,18 @@
+Only in ghc-6.10.1: Makefile-vars
+Only in ghc-6.10.1: config.log
+Only in ghc-6.10.1: config.status
+diff -ru ghc-6.10.1.orig/docs/ext-core/Makefile ghc-6.10.1/docs/ext-core/Makefile
+--- ghc-6.10.1.orig/docs/ext-core/Makefile	2008-11-03 20:09:52.000000000 +0200
++++ ghc-6.10.1/docs/ext-core/Makefile	2009-02-28 12:21:35.000000000 +0200
+@@ -5,8 +5,8 @@
+ all: pdf
+ 
+ install-docs:
+-	-mkdir      $(docdir)/ext-core
+-	cp core.pdf $(docdir)/ext-core/
++	-mkdir      $(DESTDIR)$(docdir)/ext-core
++	cp core.pdf $(DESTDIR)$(docdir)/ext-core/
+ else
+ all:
+ install-docs:
+Only in ghc-6.10.1: extra-gcc-opts

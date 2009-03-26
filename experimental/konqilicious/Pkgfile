@@ -1,0 +1,20 @@
+# Description:	konqil.icio.us
+# URL:		http://www.nth-dimension.org.uk/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	p5-lwp
+
+name=konqilicious
+version=3.1
+release=1
+source=(http://www.nth-dimension.org.uk/pub/konqil.icio.us-$version.tar.gz)
+
+build() {
+	cd konqil.icio.us-$version/src
+
+	sed -i -e 's,=$HOME/.kde/,/usr,' del.icio.us.desktop
+	install -D -m0644 del.icio.us.desktop \
+	    $PKG/usr/share/kde4/services/ServiceMenus/del.icio.us.desktop
+
+	install -D -m0755 del.icio.us \
+	    $PKG/usr/share/apps/konqueror/servicemenus/del.icio.us
+}

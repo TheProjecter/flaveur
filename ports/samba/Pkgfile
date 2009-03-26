@@ -1,0 +1,56 @@
+# Description: SMB server and client for unix
+# URL:         http://www.samba.org
+# Maintainer:  Juergen Daubert, juergen dot daubert at t-online dot de
+# Depends on:  ncurses, readline, cups, gamin
+
+name=samba
+version=3.3.2
+release=1
+source=(http://www.samba.org/samba/ftp/stable/$name-$version.tar.gz \
+        samba-config.patch samba)
+
+build () {
+    cd $name-$version/source
+
+    patch -d .. -p1 -i $SRC/samba-config.patch
+
+    ./configure --prefix=/usr \
+                --libdir=/usr/lib/samba \
+                --localstatedir=/var \
+                --with-fhs \
+                --with-configdir=/etc/samba \
+                --with-modulesdir=/usr/lib/samba \
+                --with-lockdir=/var/run/samba \
+                --with-piddir=/var/run/samba \
+                --with-mandir=/usr/man \
+                --with-logfilebase=/var/log/samba \
+                --disable-swat
+
+    make
+    make DESTDIR=$PKG install
+
+    install -d $PKG/sbin
+    mv $PKG/usr/sbin/*.cifs $PKG/sbin
+    ln -s samba/libsmbclient.so.0 $PKG/usr/lib/libsmbclient.so 
+
+    install -d $PKG/etc/ld.so.conf.d
+    echo "/usr/lib/samba" > $PKG/etc/ld.so.conf.d/samba.conf
+
+    # nsswitch extensions
+    install -d $PKG/lib
+    install nsswitch/libnss_win{s,bind}.so $PKG/lib
+    ln -s libnss_wins.so $PKG/lib/libnss_wins.so.2
+    ln -s libnss_winbind.so $PKG/lib/libnss_winbind.so.2
+
+    # spool/log/lib directory
+    install -d $PKG/var/{lib,log}/samba
+    install -d -m 1777 $PKG/var/spool/samba
+
+    # config-file and start-script
+    install -m 644 ../examples/smb.conf.default $PKG/etc/samba
+    install -D -m 755  $SRC/samba $PKG/etc/rc.d/samba
+
+    # cleanup
+    rm -r $PKG/usr/share
+    rm -r $PKG/usr/man/man8/swat.8
+}

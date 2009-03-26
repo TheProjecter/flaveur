@@ -1,0 +1,34 @@
+NOTES
+-----
+
+Please enable the CONFIG_TIMER_STATS kernel op
+This option is located in the Kernel Debugging section of menuconfig
+(which is CONFIG_DEBUG_KERNEL=y in the config file)
+Note: this is only available in 2.6.21 and later kernels
+
+SUGGESTIONS
+-----------
+
+Suggestion 1: 
+
+increase the VM dirty writeback time from 4,99 to 15 seconds with:
+  echo 1500 > /proc/sys/vm/dirty_writeback_centisecs 
+This wakes the disk up less frequenty for background VM activity
+
+Suggestion 2: 
+
+enable the noatime filesystem option by executing the following command:
+   mount -o remount,noatime /          or by pressing the T key 
+noatime disables persistent access time of file accesses, which causes lots of disk IO.
+
+Suggestion 3: 
+
+Enable the CONFIG_CPU_FREQ_STAT kernel configuration option.
+This option allows PowerTOP to show P-state percentages 
+P-states correspond to CPU frequencies.
+
+Suggestion 4:
+
+Enable USB autosuspend by pressing the U key or adding
+usbcore.autosuspend=1 to the kernel command line in the grub config
+

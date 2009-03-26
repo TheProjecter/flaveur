@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/ferm: start/stop ferm firewall
+#
+
+FERM_CONF=/etc/ferm/ferm.conf
+case $1 in
+start)
+	/usr/sbin/ferm $FERM_CONF
+	;;
+stop)
+	/usr/sbin/ferm --flush $FERM_CONF
+	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file

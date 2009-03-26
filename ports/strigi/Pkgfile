@@ -1,0 +1,35 @@
+# Description:	Strigi
+# URL:		http://www.kde.org
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	qt4, clucene, gamin, libxml2, exiv2
+
+name=strigi
+version=0.6.4
+release=1
+source=()
+upstream=svn://anonsvn.kde.org/home/kde/tags/$name/$name/$name-$version
+
+build() {
+    cd $PKGMK_SOURCE_DIR
+ 
+    if [ -d $name ]; then
+	svn switch $upstream $name
+	svn up $name
+    else
+	svn checkout $upstream $name
+    fi
+    svn export $name $SRC/$name
+
+    mkdir $SRC/build
+    cd $SRC/build
+
+    cmake $SRC/$name \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_BUILD_TYPE=Release \
+        -DENABLE_EXPAT=ON \
+        -DENABLE_FAM=ON
+
+
+    make
+    make DESTDIR=$PKG install
+}

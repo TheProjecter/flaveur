@@ -1,0 +1,9 @@
+d2a8e98a8b10ba09b2a9da34326b526a  inittab
+77fb5b906848504feecdd56807eff36e  rc
+a4588aaf90de375dd740d12353fe7a2b  rc.conf
+1f9454824aad33b81faa42fceceb797e  rc.fix
+2ab25b32354629b7616268a268d24453  rc.local
+3862ad9100c3fed1c2d5c7082cf50e94  rc.modules
+385f022ccba0aee96e271e0874ca5730  rc.multi
+574f5d5eeda210b152170dcfad1ca5d6  rc.shutdown
+fd69337039a4ac00039b5fac54551605  rc.single

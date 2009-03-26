@@ -1,0 +1,23 @@
+# Description: Galago Project notification daemon
+# URL: http://www.galago-project.org/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: dbus-glib, libsexy, libwnck, gconf
+
+name=notification-daemon
+version=0.4.0
+release=1
+source=(http://www.galago-project.org/files/releases/source/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	sed -i -e \
+		's|dbus-binding-tool \(.*\) \\|dbus-binding-tool \1 --prefix="" \\|' \
+		src/Makefile.in
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--libexecdir=/usr/lib/$name \
+		--disable-schemas-install
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/locale
+}

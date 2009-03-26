@@ -1,0 +1,114 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/qtcreator
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/qtcreator/
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libAggregation.so -> libAggregation.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libAggregation.so.1 -> libAggregation.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libAggregation.so.1.0 -> libAggregation.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/qtcreator/libAggregation.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libCPlusPlus.so -> libCPlusPlus.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libCPlusPlus.so.1 -> libCPlusPlus.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libCPlusPlus.so.1.0 -> libCPlusPlus.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/qtcreator/libCPlusPlus.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libExtensionSystem.so -> libExtensionSystem.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libExtensionSystem.so.1 -> libExtensionSystem.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libExtensionSystem.so.1.0 -> libExtensionSystem.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/qtcreator/libExtensionSystem.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libQtConcurrent.so -> libQtConcurrent.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libQtConcurrent.so.1 -> libQtConcurrent.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libQtConcurrent.so.1.0 -> libQtConcurrent.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/qtcreator/libQtConcurrent.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libUtils.so -> libUtils.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libUtils.so.1 -> libUtils.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/qtcreator/libUtils.so.1.0 -> libUtils.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/qtcreator/libUtils.so.1.0.0
+drwxr-xr-x	root/root	usr/lib/qtcreator/plugins/
+drwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/BinEditor.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Bookmarks.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/CMakeProjectManager.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Core.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/CppEditor.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/CppTools.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Debugger.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/FakeVim.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Find.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Help.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Perforce.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/ProjectExplorer.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Qt4ProjectManager.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/QtScriptEditor.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/QuickOpen.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/ScmGit.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/Subversion.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/TextEditor.pluginspec
+-rw-r--r--	root/root	usr/lib/qtcreator/plugins/Nokia/VCSBase.pluginspec
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libBinEditor.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libBookmarks.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libCMakeProjectManager.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libCore.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libCppEditor.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libCppTools.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libDebugger.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libFakeVim.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libFind.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libHelp.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libPerforce.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libProjectExplorer.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libQt4ProjectManager.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libQtScriptEditor.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libQuickOpen.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libScmGit.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libSubversion.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libTextEditor.so
+-rwxr-xr-x	root/root	usr/lib/qtcreator/plugins/Nokia/libVCSBase.so
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/applications/
+-rw-r--r--	root/root	usr/share/applications/qtcreator.desktop
+drwxr-xr-x	root/root	usr/share/doc/
+drwxr-xr-x	root/root	usr/share/doc/qtcreator/
+-rw-r--r--	root/root	usr/share/doc/qtcreator/qtcreator.qch
+drwxr-xr-x	root/root	usr/share/pixmaps/
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_128.png
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_16.png
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_24.png
+-rwxr-xr-x	root/root	usr/share/pixmaps/qtcreator_logo_256.png
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_32.png
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_48.png
+-rwxr-xr-x	root/root	usr/share/pixmaps/qtcreator_logo_512.png
+-rw-r--r--	root/root	usr/share/pixmaps/qtcreator_logo_64.png
+drwxr-xr-x	root/root	usr/share/qtcreator/
+drwxr-xr-x	root/root	usr/share/qtcreator/designer/
+drwxr-xr-x	root/root	usr/share/qtcreator/designer/templates/
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/Dialog_with_Buttons_Bottom.ui
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/Dialog_with_Buttons_Right.ui
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/Dialog_without_Buttons.ui
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/Main_Window.ui
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/Widget.ui
+-rw-r--r--	root/root	usr/share/qtcreator/designer/templates/templates.xml
+drwxr-xr-x	root/root	usr/share/qtcreator/gdbmacros/
+-rw-r--r--	root/root	usr/share/qtcreator/gdbmacros/LGPL_EXCEPTION.TXT
+-rw-r--r--	root/root	usr/share/qtcreator/gdbmacros/LICENSE.LGPL
+-rw-r--r--	root/root	usr/share/qtcreator/gdbmacros/gdbmacros.cpp
+-rw-r--r--	root/root	usr/share/qtcreator/gdbmacros/gdbmacros.pro
+drwxr-xr-x	root/root	usr/share/qtcreator/schemes/
+-rw-r--r--	root/root	usr/share/qtcreator/schemes/MS_Visual_C++.kms
+-rw-r--r--	root/root	usr/share/qtcreator/schemes/Xcode.kms
+drwxr-xr-x	root/root	usr/share/qtcreator/snippets/
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/class_generic.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/class_qobject.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/class_qwidget.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/comment.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/for.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/foreach.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/if.snp
+-rw-r--r--	root/root	usr/share/qtcreator/snippets/ifelse.snp
+drwxr-xr-x	root/root	usr/share/qtcreator/templates/
+drwxr-xr-x	root/root	usr/share/qtcreator/templates/qt4project/
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/main.cpp
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/mywidget.cpp
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/mywidget.h
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/mywidget_form.cpp
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/mywidget_form.h
+-rw-r--r--	root/root	usr/share/qtcreator/templates/qt4project/widget.ui

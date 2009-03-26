@@ -1,0 +1,51 @@
+# Description:	GNOME Display Manager
+# URL:		http://www.5z.com/jirka/gdm.html
+# Maintainer:	
+# Depends on:	librsvg, gnome-doc-utils, xorg-sessreg, libglade, gconf, gnome-panel, consolekit, policykit-gnome, gnome-utils
+# Group: gnome/desktop
+
+name=gdm
+version=2.24.1
+release=2
+source=(http://ftp.acc.umu.se/pub/gnome/sources/gdm/2.24/$name-$version.tar.bz2
+	http://jaeger.morpheus.net/linux/crux/files/GDM-crux.tar.bz2 \
+	rc.$name custom.conf \
+	pamd.gdm \
+	pamd.gdm-autologin)
+
+build() {
+	(id $name)
+	if [ $? == 1 ]; then
+		echo " -- Run the pre-install script! --"
+		exit 1
+	fi
+
+
+	cd $name-$version
+
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+
+	./configure --prefix=/usr \
+		--localstatedir=/var \
+		--sysconfdir=/etc \
+		--mandir=/usr/man \
+		--enable-console-helper=no \
+		--enable-ipv6=yes \
+		--with-xdmcp=yes \
+		--with-tcp-wrappers=no \
+		--disable-scrollkeeper \
+		--with-console-kit \
+		--with-xevie=yes
+	make
+	make DESTDIR=$PKG install
+
+	cp $SRC/custom.conf $PKG/etc/gdm/
+	cp -a $SRC/crux $PKG/usr/share/gdm/themes/
+	
+	install -D -m 0755 $SRC/rc.$name $PKG/etc/rc.d/$name
+
+	install -m0644 $SRC/pamd.gdm $PKG/etc/pam.d/gdm
+	install -m0644 $SRC/pamd.gdm-autologin $PKG/etc/pam.d/gdm-autologin
+}

@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-11-01 14:49:47.000000000 +0200
++++ Makefile	2008-11-01 14:50:10.000000000 +0200
+@@ -30,7 +30,7 @@
+ 	$(MAKE) -C gmp       install      DOING_BIN_DIST=YES
+ 	$(MAKE) -C docs      install-docs DOING_BIN_DIST=YES
+ 	$(MAKE) -C libraries/Cabal/doc install-docs DOING_BIN_DIST=YES
+-	$(INSTALL_DATA) $(INSTALL_OPTS) extra-gcc-opts $(libdir)
++	$(INSTALL_DATA) $(INSTALL_OPTS) extra-gcc-opts $(DESTDIR)$(libdir)
+ 
+ install :: postinstall denounce
+ 

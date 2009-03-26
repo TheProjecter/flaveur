@@ -1,0 +1,36 @@
+# Description: Console mouse server.
+# URL: http://unix.schottelius.org/gpm/
+# Maintainer: Danny Rawlins, monster dot romster at gmail dot com
+# Packager: Han Boetes, han at mijncomputer dot nl
+
+name=gpm
+version=1.20.6
+release=1
+source=(http://unix.schottelius.org/gpm/archives/gpm-$version.tar.bz2
+	gpm-nodebug.patch
+	gpm-no-dumb-error-messages.patch
+	gpm-make-install-fixes.patch
+	gpm.rc)
+
+build() {
+	cd gpm-$version
+
+	patch -p 1 -i $SRC/gpm-nodebug.patch
+	patch -p 1 -i $SRC/gpm-no-dumb-error-messages.patch
+	patch -p 1 -i $SRC/gpm-make-install-fixes.patch
+
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/man
+
+	make
+	make ROOT=$PKG install
+
+	ln -s libgpm.so.2.1.0 $PKG/usr/lib/libgpm.so
+	install -m 0755 -D $SRC/gpm.rc $PKG/etc/rc.d/gpm
+
+	rm -r $PKG/usr/share/info
+	rmdir $PKG/usr/etc
+	rmdir $PKG/usr/share
+}
+

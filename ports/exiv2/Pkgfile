@@ -1,0 +1,18 @@
+# Description:	Exif and Iptc metadata manipulation library and tools.
+# URL:		http://home.arcor.de/ahuggel/exiv2/index.html
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:   libpng
+
+name=exiv2
+version=0.18
+release=1
+source=(http://www.exiv2.org/exiv2-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --disable-nls
+	make
+	make prefix=$PKG/usr install
+	mv $PKG/usr/share/man $PKG/usr
+	rmdir $PKG/usr/share
+}

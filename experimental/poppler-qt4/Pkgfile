@@ -1,0 +1,34 @@
+# Description: poppler qt4 bindings
+# URL: http://poppler.freedesktop.org/
+# Maintainer: Hannes Mayer, kontakt at ecarux dot de
+# Depends on: t1lib, qt4, ghostscript, pkg-config, poppler
+
+name=poppler-qt4
+version=0.10.4
+release=1
+source=(http://poppler.freedesktop.org/poppler-$version.tar.gz poppler-0.10-bindings.patch)
+
+build()
+{
+	cd poppler-$version
+	patch -Np1 -i $SRC/poppler-0.10-bindings.patch
+  libtoolize --force --copy
+  AT_M4DIR="m4" autoreconf -i
+  ./configure --prefix=/usr --sysconfdir=/etc \
+              --localstatedir=/var --disable-static \
+              --enable-zlib \
+              --enable-libjpeg \
+              --enable-cairo-output \
+              --enable-poppler-qt4 \
+              --disable-poppler-glib \
+              --disable-gtk-test \
+              --disable-poppler-qt
+  sed -i -e 's|^LDFLAGS =|LDFLAGS = -lqt-mt|' qt/Makefile
+  make -C goo libgoo.la
+  make -C splash libsplash.la
+  make -C fofi libfofi.la
+  make -C poppler libpoppler.la libpoppler-cairo.la libpoppler-arthur.la
+  make
+  make DESTDIR=$PKG install
+  rm -f $PKG/usr/lib/pkgconfig/poppler-cairo.pc
+}

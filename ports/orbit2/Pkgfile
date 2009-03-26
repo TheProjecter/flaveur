@@ -1,0 +1,20 @@
+# Description:	Code for an ORB written in C will spontaneously evolve here
+# URL:		http://projects.gnome.org/ORBit2/
+# Maintainer:	Matt Housh, jaeger at morpheus dot net
+# Depends on:	glib, libidl
+# Group:	gnome/platform
+
+name=orbit2
+version=2.14.17
+release=1
+source=(ftp://ftp.gnome.org/pub/gnome/sources/ORBit2/2.14/ORBit2-$version.tar.bz2)
+
+build() {
+	cd ORBit2-$version
+	./configure --prefix=/usr \
+		--enable-debug=no \
+		--disable-gtk-doc
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/gtk-doc
+}

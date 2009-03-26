@@ -1,0 +1,22 @@
+# Description: icons used in the default gnome desktop
+# URL: http://art.gnome.org/themes/icon/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: hicolor-icon-theme, icon-naming-utils
+# Group: gnome/desktop
+
+name=gnome-icon-theme
+version=2.26.0
+release=1
+source=(ftp://ftp.gnome.org/pub/GNOME/sources/gnome-icon-theme/2.26/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+	mkdir -p $PKG/usr/lib
+	mv $PKG/usr/share/pkgconfig $PKG/usr/lib/
+}

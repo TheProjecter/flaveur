@@ -1,0 +1,18 @@
+# Description:	The desktop environment XFce4
+# URL:		http://www.xfce.org
+# Packager:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	startup-notification, libglade, libxfce4util, xfconf, tango-icon-theme
+# Group:	xfce4
+
+name=libxfcegui4
+version=4.6.0
+release=1
+source=(http://mocha.xfce.org/archive/xfce-$version/src/$name-$version.tar.bz2)
+
+build () {
+    cd $name-$version
+
+    ./configure --prefix=/usr
+    make 
+    make DESTDIR=$PKG install
+}

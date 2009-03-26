@@ -1,0 +1,22 @@
+# Description:	extended language indicator and switcher for XKB
+# URL:		http://pascal.tsu.ru/other/xxkb/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Packager:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	xorg-libice, xorg-libxau, xorg-libxdmcp, xorg-libsm, xorg-libxcb, xorg-libxt, xorg-libxpm, xorg-libx11
+
+name=xxkb
+version=1.10
+release=2
+source=(http://pascal.tsu.ru/other/$name/$name-$version.tgz \
+    1474055_fix.patch)
+
+build() {
+	cd $name-$version
+	patch -p1 -i $SRC/1474055_fix.patch
+	xmkmf
+	make BASEDIR=/usr
+	make install BASEDIR=/usr DESTDIR=$PKG
+	install -D -m 644 xxkb.man $PKG/usr/man/man1/xxkb.1
+	rm -rf $PKG/usr/X11R6 $PKG/usr/lib
+	mv $PKG/etc $PKG/usr/lib
+}

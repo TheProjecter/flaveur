@@ -1,0 +1,7 @@
+f2c4c5c071dfb0006403fb7d580c491a  mc-4.6.1-bash-all.patch
+3c950491cdf44091df216cfa709d133a  mc-4.6.1-find.patch
+047d0822fba23805aba432ca0e410898  mc-4.6.1-invalid-mtime.patch
+80b45ecf38d9b5df6d368c83d14fd89d  mc-4.6.1-largefile.patch
+00e89cfc43fe6026b61f52b218a65907  mc-4.6.1-nonblock.patch
+f90bffe7f51883e818143dc2077eb98f  mc-4.6.1-utf8-r2.patch.bz2
+18b20db6e40480a53bac2870c56fc3c4  mc-4.6.1.tar.gz

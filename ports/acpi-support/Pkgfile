@@ -1,0 +1,54 @@
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Description:	scripts for handling many ACPI events
+
+name=acpi-support
+version=0.109
+release=1
+source=(http://ftp.de.debian.org/debian/pool/main/a/$name/${name}_${version}-11.tar.gz)
+
+build(){
+    cd $name-$version
+
+    mkdir -p \
+	$PKG/usr/bin \
+	$PKG/usr/share/$name \
+	$PKG/etc/{rc,modprobe}.d \
+	$PKG/etc/default \
+	$PKG/etc/acpi \
+	$PKG/etc/acpi/events \
+	$PKG/etc/acpi/{suspend,resume,start,battery,ac}.d 
+    
+    make 
+
+    for file in lib/*; do
+    	install -m 644 "$file" $PKG/usr/share/acpi-support/
+    done
+    install -m 755 lib/suspendorhibernate $PKG/usr/share/acpi-support/
+    for file in events/*; do
+    	install -m 644 $file $PKG/etc/acpi/events/
+    done
+    for file in suspend.d/*.sh; do
+    	install -m 755 $file $PKG/etc/acpi/suspend.d/
+    done
+    for file in resume.d/*.sh; do
+    	install -m 755 $file $PKG/etc/acpi/resume.d/
+    done
+    for file in start.d/*.sh; do
+    	install -m 755 $file $PKG/etc/acpi/start.d/
+    done
+    for file in battery.d/*.sh; do
+    	install -m 755 $file $PKG/etc/acpi/battery.d/
+    done
+    for file in ac.d/*.sh; do
+    	install -m 755 $file $PKG/etc/acpi/ac.d/
+    done
+    for file in *.sh; do
+    	install -m 755 $file $PKG/etc/acpi/
+    done
+    install -m 644 acpi-support $PKG/etc/default/
+    install -m 644 thinkpad_acpi.modprobe $PKG/etc/modprobe.d/
+    install -m 755 vbesave $PKG/etc/rc.d/vbesave
+    install -m 755 acpi_fakekey $PKG/usr/bin/acpi_fakekey
+    install -m 644 key-constants $PKG/usr/share/acpi-support/
+}
+

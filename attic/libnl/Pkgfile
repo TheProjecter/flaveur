@@ -1,0 +1,23 @@
+# Description: Library for applications dealing with netlink sockets
+# URL:         http://people.suug.ch/~tgr/libnl
+# Maintainer:  Rouven Schuerch, rs at tegonal dot com
+# Packager:    Antonio SJ Musumeci, bile at landofbile dot com
+# Depends on:
+
+name=libnl
+version=1.1
+release=1
+source=(http://people.suug.ch/~tgr/$name/files/$name-$version.tar.gz \
+    limits.patch)
+
+build()
+{
+    cd $name-$version
+    
+    patch -p1 -i $SRC/limits.patch
+
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+   # install -D -m0644 ../libnl-1.pc $PKG/usr/lib/pkgconfig/libnl-1.pc
+}

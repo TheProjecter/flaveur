@@ -1,0 +1,5 @@
+6b534da16dc1b28ba828dea89e520f6f  gpm-1.20.6.tar.bz2
+5e87c72bc9e6543baa2a00edda3e988b  gpm-make-install-fixes.patch
+d84e482baf077c3b8c5542f4c084e3b3  gpm-no-dumb-error-messages.patch
+bba366a0229e870451675995be2c949d  gpm-nodebug.patch
+7249d7f61544822bc70d5c1c446c3dec  gpm.rc

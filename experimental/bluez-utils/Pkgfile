@@ -1,0 +1,38 @@
+# Description:	Official linux bluetooth protocol stack - utilities
+# URL:	http://www.bluez.org/
+# Maintainer:	Alan Mizrahi, alan at mizrahi dot com dot ve
+# Depends on:	python, cups, dbus, libusb, bluez-libs
+
+name=bluez-utils
+version=3.36
+release=1
+source=(http://bluez.sourceforge.net/download/$name-$version.tar.gz \
+    rc.bluetooth)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+	--sysconfdir=/etc \
+	--mandir=/usr/man \
+	--localstatedir=/var \
+	--enable-alsa \
+	--enable-usb \
+	--enable-dbus \
+	--enable-cups \
+	--enable-hidd \
+	--enable-dund \
+	--enable-pand \
+	--enable-tools \
+	--enable-hid2hci \
+	--disable-nls
+
+    make
+    make DESTDIR=$PKG install
+
+    mkdir $PKG/usr/etc
+    mv $PKG/etc/dbus-1 $PKG/usr/etc/
+
+    install -D -m 755 $SRC/rc.bluetooth $PKG/etc/rc.d/bluetooth
+    
+    chown -R root:root $PKG
+}

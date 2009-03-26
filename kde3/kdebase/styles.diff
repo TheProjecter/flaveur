@@ -1,0 +1,81 @@
+diff -pruN kdebase-3.5.10.orig/kcontrol/krdb/themes/Makefile.in kdebase-3.5.10/kcontrol/krdb/themes/Makefile.in
+--- kdebase-3.5.10.orig/kcontrol/krdb/themes/Makefile.in	2008-08-20 19:01:43.000000000 +0300
++++ kdebase-3.5.10/kcontrol/krdb/themes/Makefile.in	2008-11-03 17:09:59.746061022 +0200
+@@ -413,10 +413,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-SUBDIRS = HighContrastDark  HighContrastDark-big \
+-          HighContrastLight HighContrastLight-big \
+-          YellowOnBlue      YellowOnBlue-big \
+-          KDE_Classic Keramik Plastik Platinum Sunshine Redmond
++SUBDIRS = 
+ 
+ #>- all: all-recursive
+ #>+ 1
+diff -pruN kdebase-3.5.10.orig/ksplashml/pics/themes/Makefile.in kdebase-3.5.10/ksplashml/pics/themes/Makefile.in
+--- kdebase-3.5.10.orig/ksplashml/pics/themes/Makefile.in	2008-08-20 19:01:50.000000000 +0300
++++ kdebase-3.5.10/ksplashml/pics/themes/Makefile.in	2008-11-03 20:53:03.502809785 +0200
+@@ -415,7 +415,7 @@ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+ #>- SUBDIRS = $(AUTODIRS)
+ #>+ 1
+-SUBDIRS =. blue-bend simple none default
++SUBDIRS =. none default
+ #>- all: all-recursive
+ #>+ 1
+ all: docs-am  all-recursive
+diff -pruN kdebase-3.5.10.orig/ksplashml/themeengine/Makefile.in kdebase-3.5.10/ksplashml/themeengine/Makefile.in
+--- kdebase-3.5.10.orig/ksplashml/themeengine/Makefile.in	2008-08-20 19:01:50.000000000 +0300
++++ kdebase-3.5.10/ksplashml/themeengine/Makefile.in	2008-11-03 17:21:51.937062253 +0200
+@@ -473,7 +473,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-SUBDIRS = . default standard redmond simple
++SUBDIRS = . default
+ INCLUDES = -I$(srcdir)/.. $(all_includes)
+ lib_LTLIBRARIES = libksplashthemes.la
+ libksplashthemes_la_SOURCES = themeengine.cpp objkstheme.cpp
+diff -pruN kdebase-3.5.10.orig/kwin/clients/Makefile.in kdebase-3.5.10/kwin/clients/Makefile.in
+--- kdebase-3.5.10.orig/kwin/clients/Makefile.in	2008-08-20 19:01:52.000000000 +0300
++++ kdebase-3.5.10/kwin/clients/Makefile.in	2008-11-03 17:27:14.375061286 +0200
+@@ -413,7 +413,7 @@ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+ xdg_directorydir = @xdg_directorydir@
+ xdg_menudir = @xdg_menudir@
+-SUBDIRS = plastik b2 default keramik laptop modernsystem quartz redmond web
++SUBDIRS = plastik default quartz
+ #>- all: all-recursive
+ #>+ 1
+ all: docs-am  all-recursive
+diff -pruN kdebase-3.5.10.orig/kwin/kcmkwin/kwindecoration/kwindecoration.cpp kdebase-3.5.10/kwin/kcmkwin/kwindecoration/kwindecoration.cpp
+--- kdebase-3.5.10.orig/kwin/kcmkwin/kwindecoration/kwindecoration.cpp	2006-01-19 19:01:03.000000000 +0200
++++ kdebase-3.5.10/kwin/kcmkwin/kwindecoration/kwindecoration.cpp	2008-11-03 22:22:26.355809887 +0200
+@@ -234,7 +234,7 @@ void KWinDecorationModule::createDecorat
+ 
+ 	// Sync with kwin hardcoded KDE2 style which has no desktop item
+     QStringList decorationNames;
+-	decorationNames.append( i18n("KDE 2") );
++//	decorationNames.append( i18n("KDE 2") );
+ 	for (it = decorations.begin(); it != decorations.end(); ++it)
+ 	{
+ 		decorationNames.append((*it).name);
+@@ -347,7 +347,7 @@ QString KWinDecorationModule::decoration
+ 		}
+ 
+ 	if (libName.isEmpty())
+-		libName = "kwin_default";	// KDE 2
++		libName = "kwin3_plastik";	// Plastik
+ 
+ 	return libName;
+ }
+@@ -436,7 +436,7 @@ void KWinDecorationModule::readConfig( K
+ 
+ 	// If we are using the "default" kde client, use the "default" entry.
+ 	if (decoName.isEmpty())
+-		decoName = i18n("KDE 2");
++		decoName = i18n("Plastik");
+ 
+     int numDecos = decorationList->count();
+ 	for (int i = 0; i < numDecos; ++i)

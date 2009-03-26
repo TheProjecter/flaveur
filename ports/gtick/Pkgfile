@@ -1,0 +1,18 @@
+# Description: Metronome using the GTK-toolkit
+# URL:         http://www.antcom.de/gtick/
+# Maintainer:  Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:  gtk
+
+name=gtick
+version=0.4.2
+release=1
+source=(http://www.antcom.de/${name}/download/${name}-${version}.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr \
+                --mandir=/usr/man \
+                --disable-nls
+    make
+    make DESTDIR=$PKG install
+}

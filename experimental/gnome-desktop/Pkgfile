@@ -1,0 +1,26 @@
+# Description: GNOME desktop about screen
+# URL: http://www.gnome.org/about/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: libgnomeui, startup-notification, gnome-themes, gnome-doc-utils, libxml2-python
+# Group: gnome/desktop
+
+name=gnome-desktop
+version=2.24.2
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--mandir=/usr/man \
+		--with-gnome-distributor="CRUX" \
+		--enable-doc=no \
+		--enable-gtk-doc=no \
+		--disable-scrollkeeper
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/gtk-doc
+}

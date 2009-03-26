@@ -1,0 +1,25 @@
+# Description: GNU GRUB (GRand Unified Bootloader) 2
+# URL: http://www.gnu.org/software/grub/
+# Packager: Daniel Müller, daniel at danm dot de
+# Maintainer: Lucas Hazel, lucas at die dot net dot au
+# Depends on: gettext, lzo, freetype
+
+name=grub
+version=1.96
+release=1
+source=(ftp://alpha.gnu.org/gnu/$name/$name-$version.tar.gz)
+
+build () {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--libdir=/usr/share \
+		--mandir=/usr/man \
+		--sbindir=/sbin \
+		--disable-nls \
+		--enable-grub-mkfont
+		
+	make
+	make DESTDIR=$PKG install
+}

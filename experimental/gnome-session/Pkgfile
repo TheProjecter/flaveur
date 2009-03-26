@@ -1,0 +1,29 @@
+# Description: GNOME session manager, configuration program, and proxy
+# URL: http://www.gnome.org/softwaremap/projects/gnome-session/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: libgnomeui, esound, libwnck, metacity
+# Group: gnome/desktop
+
+name=gnome-session
+version=2.24.2
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/man \
+		--enable-ipv6 \
+		--with-window-manager=metacity \
+		--with-reboot-command=/sbin/reboot \
+		--with-halt-command=/sbin/halt \
+		--with-rsh-command=/usr/bin/ssh \
+		--disable-schemas-install
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/xsessions
+}
