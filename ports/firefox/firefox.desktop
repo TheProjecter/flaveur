@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Firefox
-Comment=Web Browser
-Exec=firefox
-Icon=/usr/lib/firefox/icons/mozicon128.png
-Type=Application
-Categories=Application;Network;

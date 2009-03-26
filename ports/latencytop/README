@@ -1,2 +1,0 @@
-Your kernel must be built with CONFIG_LATENCYTOP and 
-CONFIG_HAVE_LATENCYTOP_SUPPORT enabled

@@ -1,2 +1,0 @@
-groupadd -g 91 polkit
-useradd -u 91 -s /bin/false -d /var/empty -g 91 -r  polkit
