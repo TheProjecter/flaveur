@@ -1,6 +1,0 @@
-drwxr-xr-x	root/root	usr/
-drwxr-xr-x	root/root	usr/share/
-drwxr-xr-x	root/root	usr/share/cracklib/
--rw-r--r--	root/root	usr/share/cracklib/pw_dict.hwm
--rw-r--r--	root/root	usr/share/cracklib/pw_dict.pwd
--rw-r--r--	root/root	usr/share/cracklib/pw_dict.pwi

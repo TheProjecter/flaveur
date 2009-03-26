@@ -1,5 +1,0 @@
-#!/bin/sh
-if ! grep dash /etc/shells > /dev/null 2>&1; then
-    echo "Adding dash to /etc/shells ..."
-    echo "/bin/dash" >> /etc/shells
-fi

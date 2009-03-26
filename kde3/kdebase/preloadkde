@@ -1,2 +1,0 @@
-#!/bin/sh
-exec find /usr/share/applications /usr/share/applnk /usr/share/mimelnk /usr/share/services /usr/share/servicetypes /usr/share/config.kcfg /usr/share/icons /usr/lib/kde3 -false

@@ -1,8 +1,0 @@
-NOTES
-
-When running dict use the -h option to specify the host
-
-POST-INSTALL
-
-Edit /etc/dictd.conf to tune your dictd server (add a database for example)
-

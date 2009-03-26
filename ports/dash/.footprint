@@ -1,8 +1,0 @@
-drwxr-xr-x	root/root	bin/
-lrwxrwxrwx	root/root	bin/ash -> dash
--rwxr-xr-x	root/root	bin/dash
-drwxr-xr-x	root/root	usr/
-drwxr-xr-x	root/root	usr/man/
-drwxr-xr-x	root/root	usr/man/man1/
-lrwxrwxrwx	root/root	usr/man/man1/ash.1.gz -> dash.1.gz
--rw-r--r--	root/root	usr/man/man1/dash.1.gz
