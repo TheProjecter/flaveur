@@ -1,0 +1,13 @@
+diff -u pkgutils-5.33.0.orig/Makefile pkgutils-5.33.0/Makefile
+--- pkgutils-5.33.0.orig/Makefile	2008-11-04 21:17:18.000000000 +0200
++++ pkgutils-5.33.0/Makefile	2009-03-26 18:18:46.000000000 +0200
+@@ -32,7 +32,7 @@
+ CXXFLAGS += -O2 -Wall -pedantic -D_GNU_SOURCE -DVERSION=\"$(VERSION)\" \
+ 	    -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+ 
+-LDFLAGS += -static -larchive -lz -lbz2
++LDFLAGS += -static -larchive -lz -lbz2 -lacl
+ 
+ OBJECTS = main.o pkgutil.o pkgadd.o pkgrm.o pkginfo.o
+ 
+Only in pkgutils-5.33.0: Makefile~
