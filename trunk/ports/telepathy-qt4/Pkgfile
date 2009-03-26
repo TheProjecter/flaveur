@@ -1,0 +1,33 @@
+# Description:	Next-generation bindings of Telepathy and others using the same XML spec format to the Qt4 world
+# URL:		http://telepathy.freedesktop.org/wiki/Telepathy-Qt4
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	git, qt4
+
+name=telepathy-qt4
+version=$(date '+%Y%m%d')
+release=1-git
+source=()
+upstream=git://git.collabora.co.uk/git/telepathy-qt4.git
+
+build() {
+
+    cd $PKGMK_SOURCE_DIR
+    if [ ! -d $name ]; then
+	git clone $upstream $name
+    fi
+
+    cd $name
+    git pull
+
+    # god bless unix shell
+    git archive --prefix=$name-$version/ master \
+    | tar -x -C $SRC
+
+    cd $SRC/$name-$version
+
+    autoreconf --install
+
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

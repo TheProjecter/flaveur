@@ -1,0 +1,16 @@
+# Description:	documentation metadata library designed to replace scrollkeeper
+# URL:		http://code.google.com/p/rarian/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Packager:	Matt Housh, jaeger at morpheus dot net
+
+name=rarian
+version=0.8.1
+release=1
+source=(http://download.gnome.org/sources/$name/0.8/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

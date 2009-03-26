@@ -1,0 +1,21 @@
+# Description: Implementation of freedesktop.org's Desktop Menu Specification
+# URL: http://www.gnome.org/projects/nautilus/
+# Maintainer: Matt Housh jaeger at morpheus dot net
+# Depends on: glib, intltool, desktop-file-utils
+# Group: gnome/desktop
+
+name=gnome-menus
+version=2.24.2
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--sysconfdir=/etc
+	make
+	make DESTDIR=$PKG install
+}

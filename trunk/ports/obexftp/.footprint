@@ -1,0 +1,61 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/obexftp
+-rwxr-xr-x	root/root	usr/bin/obexftpd
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/bfb/
+-rw-r--r--	root/root	usr/include/bfb/bfb.h
+-rw-r--r--	root/root	usr/include/bfb/bfb_io.h
+drwxr-xr-x	root/root	usr/include/multicobex/
+-rw-r--r--	root/root	usr/include/multicobex/multi_cobex.h
+drwxr-xr-x	root/root	usr/include/obexftp/
+-rw-r--r--	root/root	usr/include/obexftp/client.h
+-rw-r--r--	root/root	usr/include/obexftp/obexftp.h
+-rw-r--r--	root/root	usr/include/obexftp/object.h
+-rw-r--r--	root/root	usr/include/obexftp/uuid.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libbfb.a
+-rwxr-xr-x	root/root	usr/lib/libbfb.la
+lrwxrwxrwx	root/root	usr/lib/libbfb.so -> libbfb.so.0.0.5
+lrwxrwxrwx	root/root	usr/lib/libbfb.so.0 -> libbfb.so.0.0.5
+-rwxr-xr-x	root/root	usr/lib/libbfb.so.0.0.5
+-rw-r--r--	root/root	usr/lib/libmulticobex.a
+-rwxr-xr-x	root/root	usr/lib/libmulticobex.la
+lrwxrwxrwx	root/root	usr/lib/libmulticobex.so -> libmulticobex.so.1.0.1
+lrwxrwxrwx	root/root	usr/lib/libmulticobex.so.1 -> libmulticobex.so.1.0.1
+-rwxr-xr-x	root/root	usr/lib/libmulticobex.so.1.0.1
+-rw-r--r--	root/root	usr/lib/libobexftp.a
+-rwxr-xr-x	root/root	usr/lib/libobexftp.la
+lrwxrwxrwx	root/root	usr/lib/libobexftp.so -> libobexftp.so.0.3.0
+lrwxrwxrwx	root/root	usr/lib/libobexftp.so.0 -> libobexftp.so.0.3.0
+-rwxr-xr-x	root/root	usr/lib/libobexftp.so.0.3.0
+-rw-r--r--	root/root	usr/lib/obexftp.a
+-rwxr-xr-x	root/root	usr/lib/obexftp.la
+lrwxrwxrwx	root/root	usr/lib/obexftp.so -> obexftp.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/obexftp.so.0 -> obexftp.so.0.0.0
+-rwxr-xr-x	root/root	usr/lib/obexftp.so.0.0.0
+drwxr-xr-x	root/root	usr/lib/perl5/
+drwxr-xr-x	root/root	usr/lib/perl5/5.10.0/
+drwxr-xr-x	root/root	usr/lib/perl5/5.10.0/linux/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.10.0/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.10.0/linux/
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.10.0/linux/OBEXFTP.pm
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.10.0/linux/auto/
+drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.10.0/linux/auto/OBEXFTP/
+-rw-r--r--	root/root	usr/lib/perl5/site_perl/5.10.0/linux/auto/OBEXFTP/.packlist
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.10.0/linux/auto/OBEXFTP/OBEXFTP.bs (EMPTY)
+-r-xr-xr-x	root/root	usr/lib/perl5/site_perl/5.10.0/linux/auto/OBEXFTP/OBEXFTP.so
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/obexftp.pc
+drwxr-xr-x	root/root	usr/lib/python2.6/
+drwxr-xr-x	root/root	usr/lib/python2.6/site-packages/
+-rw-r--r--	root/root	usr/lib/python2.6/site-packages/obexftp-0.23-py2.6.egg-info
+drwxr-xr-x	root/root	usr/lib/python2.6/site-packages/obexftp/
+-rw-r--r--	root/root	usr/lib/python2.6/site-packages/obexftp/__init__.py
+-rw-r--r--	root/root	usr/lib/python2.6/site-packages/obexftp/__init__.pyc
+-rwxr-xr-x	root/root	usr/lib/python2.6/site-packages/obexftp/_obexftp.so
+drwxr-xr-x	root/root	usr/man/
+drwxr-xr-x	root/root	usr/man/man1/
+-rw-r--r--	root/root	usr/man/man1/obexftp.1.gz
+-rw-r--r--	root/root	usr/man/man1/obexftpd.1.gz

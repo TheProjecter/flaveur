@@ -1,0 +1,16 @@
+# Description:	C library for manipulating POSIX tar files
+# URL:		http://www.feep.net/libtar/
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:
+
+name=libtar
+version=1.2.11
+release=1
+source=(ftp://ftp.feep.net/pub/software/$name/$name-$version.tar.gz)
+
+build() {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

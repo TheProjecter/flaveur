@@ -1,0 +1,32 @@
+# Description:	comfortable optical disk burner
+# URL:		http://www.k3b.org/
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	kdelibs, flac, ffmpeg, libmad, lame, libsndfile, libogg, libvorbis, libmpcdec, libdvdnav, wodim, cdrdao, vcdimager
+
+name=k3b
+version=$(date '+%Y%m%d')
+release=svn
+source=()
+upstream=svn://anonsvn.kde.org/home/kde/trunk/extragear/multimedia/$name
+
+build() {
+    cd $PKGMK_SOURCE_DIR
+ 
+    if [ -d $name ]; then
+	svn switch $upstream $name
+	svn up $name
+    else
+	svn checkout $upstream $name
+    fi
+    svn export $name $SRC/$name
+
+    mkdir $SRC/build
+    cd $SRC/build
+
+    cmake $SRC/$name \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_BUILD_TYPE=debugfull
+
+    make
+    make DESTDIR=$PKG install
+}

@@ -1,0 +1,15 @@
+# Maintainer:  Johannes Winkelmann, jw at smts dot ch
+# Description: run-time mechanisms for determining which OpenGL extension
+# URL:         http://glew.sourceforge.net/
+
+name=glew
+version=1.5.1
+release=1
+source=(http://dl.sourceforge.net/sourceforge/${name}/${name}-${version}-src.tgz)
+
+build() {
+    cd $name
+    sed -i -e 's/\r$//' config/config.guess
+    make CFLAGS.EXTRA="$CFLAGS"
+    make GLEW_DEST=$PKG/usr install
+}

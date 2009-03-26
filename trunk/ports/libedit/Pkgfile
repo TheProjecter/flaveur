@@ -1,0 +1,15 @@
+# Description:	port of NetBSD editline library
+# Packager:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# URL:		http://thrysoee.dk/editline/
+
+name=libedit
+version=20090111-3.0
+release=1
+source=(http://thrysoee.dk/editline/$name-$version.tar.gz)
+
+build () {
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$PKG install
+}

@@ -1,0 +1,21 @@
+# Description: Themes collection for GNOME
+# URL: http://art.gnome.org/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: gtk-engines, metacity, icon-naming-utils
+# Group: gnome/desktop
+
+name=gnome-themes
+version=2.24.1
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--enable-all-themes
+	make
+	make prefix=$PKG/usr install
+}

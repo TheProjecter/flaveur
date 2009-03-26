@@ -1,0 +1,19 @@
+diff -pruN xxkb-1.10.orig/resource.c xxkb-1.10/resource.c
+--- xxkb-1.10.orig/resource.c	2006-05-02 12:50:21.000000000 +0300
++++ xxkb-1.10/resource.c	2006-05-02 12:51:49.000000000 +0300
+@@ -4,6 +4,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
++#include <stdio.h>
+ 
+ #include "wlist.h"
+ #include "xxkb.h"
+@@ -383,7 +384,6 @@ XImage **pixmap;
+   case XpmNoMemory:
+     printf("No memory for open xpm file: %s\n", name);
+     break;
+-  default:
+   }
+ }
+ 

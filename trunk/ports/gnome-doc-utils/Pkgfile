@@ -1,0 +1,22 @@
+# Description:	Documentation utilities for GNOME
+# URL:		http://www.gnome.org/
+# Maintainer:	Oleksiy V. Khilkevich <grim@asu.ntu-kpi.kiev.ua> 
+# Packager:	Matt Housh, jaeger at morpheus dot net
+# Depends on:	rarian
+
+name=gnome-doc-utils
+version=0.15.2
+release=1
+source=(http://ftp.gnome.org/pub/GNOME/sources/$name/0.15/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	
+	./configure --prefix=/usr \
+		--mandir=/usr/man \
+		--disable-scrollkeeper
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/locale
+}

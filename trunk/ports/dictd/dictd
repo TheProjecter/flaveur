@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# /etc/rc.d/dictd: start/stop DICT server
+#
+
+
+case $1 in
+start)
+	/usr/sbin/dictd
+	;;
+stop)
+	killall -q /usr/sbin/dictd
+	;;
+restart)
+	$0 stop
+	sleep 2
+	$0 start
+	;;
+*)
+	echo "usage: $0 [start|stop|restart]"
+	;;
+esac
+
+# End of file

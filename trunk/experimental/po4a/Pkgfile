@@ -1,0 +1,15 @@
+# Description: A small utilite to ease translations from the Debian project
+# URL: 	       http://packages.qa.debian.org/d/debianutils.html
+# Maintainer:  Clint Adams <schizo@debian.org>
+# Packager:    Maxim Falcoby falcony at users dot sourceforge dot net
+
+name=po4a
+version=0.34
+release=1
+source=(ftp://ftp.debian.org/debian/pool/main/p/$name/$name\_$version.orig.tar.gz )
+
+build () {
+    chmod -R u+rw,g+r-w,o+r-w $SRC
+    cd $name-$version
+    make all install DESTDIR=$PKG
+}

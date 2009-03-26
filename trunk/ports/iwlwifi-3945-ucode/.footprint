@@ -1,0 +1,4 @@
+drwxr-xr-x	root/root	lib/
+drwxr-xr-x	root/root	lib/firmware/
+-rw-r--r--	root/root	lib/firmware/iwlwifi-3945-2.ucode
+lrwxrwxrwx	root/root	lib/firmware/iwlwifi-3945.ucode -> /lib/firmware/iwlwifi-3945-2.ucode

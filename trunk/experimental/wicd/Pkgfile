@@ -1,0 +1,16 @@
+# Description:	wired and wireless network manager
+# URL:		http://wicd.sourceforge.net/
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua> 
+# Depends on:	gtk, python
+
+name=wicd 
+version=1.5.9
+release=1 
+source=(http://dl.sourceforge.net/sourceforge/wicd/${name}-${version}.tar.gz)
+
+build() { 
+    cd $name-$version
+    python setup.py configure
+    python setup.py install --root=$PKG
+		
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0.0
+Name=QtCreator
+Comment=Run Qt Creator
+Icon=qtcreator_logo_48.png
+Exec=qtcreator
+Terminal=false
+Categories=Development;IDE;

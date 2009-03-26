@@ -1,0 +1,24 @@
+# Description:	provides parsers and serializers that generate RDF triples 
+# URL:		http://librdf.org/raptor/
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Packager:	Diederick de Vries, diederick at diederickdevries dot net
+# Depends on:	curl, libxslt, libxml2
+
+name=raptor
+version=1.4.18
+release=1
+source=(http://download.librdf.org/source/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure \
+		--prefix=/usr \
+		--datarootdir=/usr \
+		--disable-static
+
+	make
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/gtk-doc
+}
+

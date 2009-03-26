@@ -1,0 +1,16 @@
+# Description: A set of python bindings for cairo
+# URL: http://cairographics.org/pycairo
+# Maintainer: Simone Rota, sip at crux dot nu
+# Depends on: cairo, python
+
+name=pycairo
+version=1.8.0
+release=1
+source=(http://cairographics.org/releases/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}

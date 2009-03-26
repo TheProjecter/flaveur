@@ -1,0 +1,13 @@
+# Description:	flaveur base system
+# URL:		
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:   iwlwifi-3945-ucode, vim, xxkb, xterm, powertop, pm-utils, ncmpc, mpd, mc, hal, gmrun, ferm, openbox, obconf, dictd, dict-mueller, devilspie, htop, elinks, jdk, adobereader, subversion, cvs, cpufrequtils, cups, samba, feh, firefox, thunderbird, gdb, gpm, iptraf, mplayer, nvidia, rdesktop, ppp, screen, sudo, slim, unrar, whois, wpa_supplicant
+
+name=base
+version=1
+release=1
+source=()
+
+build () {
+    mkdir -p $PKG/usr
+}

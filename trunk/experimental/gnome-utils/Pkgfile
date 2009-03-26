@@ -1,0 +1,29 @@
+# Description: GNOME utility programs
+# URL: http://www.gnome.org/softwaremap/projects/gnome-utils/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: libgnomeui, gnome-panel
+# Group: gnome/desktop
+
+name=gnome-utils
+version=2.24.1
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	rm po/*.po
+	sed -i -e 's/USE_NLS=yes/USE_NLS=no/' \
+		-e 's/ENABLE_NLS 1/ENABLE_NLS 0/' configure
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/man \
+		--libexecdir=/usr/lib/$name \
+		--disable-schemas-install \
+		--disable-scrollkeeper \
+		--enable-console-helper=no \
+		--enable-ipv6=yes
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/gtk-doc
+}

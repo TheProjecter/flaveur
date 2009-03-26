@@ -1,0 +1,13 @@
+POST-INSTALL
+------------
+
+Add this section to the end of /etc/dict/dictd.conf:
+
+database mueller7 {
+	data "/usr/share/dict/mueller7.dict.dz"
+	index "/usr/share/dict/mueller7.index"
+	access {
+		allow *
+	}
+}
+

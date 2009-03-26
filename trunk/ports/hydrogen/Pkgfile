@@ -1,0 +1,33 @@
+# Description:	An avdanced drum machine for GNU/Linux.
+# URL:		http://www.hydrogen-music.org/
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	qt4, scons, liblrdf, jack-audio-connection-kit
+
+name=hydrogen
+version=0.9.4-beta3
+release=1
+source=(http://dl.sf.net/sourceforge/$name/$name-$version.tar.gz \
+    manual.html.gz)
+
+build() {
+    gunzip manual.html.gz
+
+    cd hydrogen-$version
+
+    export QTDIR=/usr/share/qt4
+
+    scons libarchive=1 prefix=/usr
+    scons libarchive=1 prefix=/usr destdir=$PKG install
+
+    cd $PKG/usr/share/hydrogen
+    rm -r data/i18n \
+	data/doc/man \
+	data/doc/updateManuals.sh \
+	data/doc/*.docbook \
+	data/doc/tutorial_{it,fr}.html \
+	data/doc/manual_{nl,it,fr,es,de}.html \
+	data/doc/manual.html
+
+    install -m 644 $SRC/manual.html $PKG/usr/share/hydrogen/data/doc/manual.html
+}
+

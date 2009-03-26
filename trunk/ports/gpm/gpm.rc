@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# /etc/rc.d/gpm: start/stop console mouse
+#
+
+case $1 in
+    start)
+        /usr/sbin/gpm -m /dev/input/mice -t ps2
+        ;;
+    stop)
+        pkill -f 'gpm -m /dev/input/mice'
+        ;;
+    restart)
+	pkill -HUP -f 'gpm -m /dev/input/mice'
+        ;;
+    *)
+        echo "usage: $0 [start|stop|restart]"
+        ;;
+esac
+
+# End of file

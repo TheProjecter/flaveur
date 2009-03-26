@@ -1,0 +1,27 @@
+# Description: The slang library version 2
+# URL:         http://www.s-lang.org/
+# Maintainer:  Vincenzo Colosimo, vico at bicisport dot de
+# Depends on:  libpcre, libpng
+
+# Note: This port can't coexist with the older slang lib version 1.X.X
+
+name=libslang2
+tarname=slang
+version=2.1.4
+release=2
+source=(ftp://space.mit.edu/pub/davis/$tarname/v2.1/$tarname-$version.tar.bz2 \
+        $name.patch)
+
+build () {
+    cd $tarname-$version
+    patch -p1 < ../$name.patch
+    ./configure --prefix=/usr \
+	--sysconfdir=/etc \
+	--mandir=/usr/man
+    make all
+    make DESTDIR=$PKG install-all
+    rm -rf $PKG/usr/share/doc
+    chmod 755 $PKG/usr/lib/libslang.so.$version \
+              $PKG/usr/lib/slang/v2/modules/*.so
+}
+

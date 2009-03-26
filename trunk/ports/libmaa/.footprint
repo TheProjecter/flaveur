@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/include/
+-rw-r--r--	root/root	usr/include/maa.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libmaa.a
+-rwxr-xr-x	root/root	usr/lib/libmaa.la
+lrwxrwxrwx	root/root	usr/lib/libmaa.so -> libmaa.so.1.0.0
+lrwxrwxrwx	root/root	usr/lib/libmaa.so.1 -> libmaa.so.1.0.0
+-rwxr-xr-x	root/root	usr/lib/libmaa.so.1.0.0

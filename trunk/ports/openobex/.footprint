@@ -1,0 +1,17 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/openobex/
+-rw-r--r--	root/root	usr/include/openobex/obex.h
+-rw-r--r--	root/root	usr/include/openobex/obex_const.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libopenobex.a
+-rwxr-xr-x	root/root	usr/lib/libopenobex.la
+lrwxrwxrwx	root/root	usr/lib/libopenobex.so -> libopenobex.so.1.3.0
+lrwxrwxrwx	root/root	usr/lib/libopenobex.so.1 -> libopenobex.so.1.3.0
+-rwxr-xr-x	root/root	usr/lib/libopenobex.so.1.3.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/openobex.pc
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/aclocal/
+-rw-r--r--	root/root	usr/share/aclocal/openobex.m4

@@ -1,0 +1,19 @@
+# Description:	tools to document API of GTK anf GNOME
+# URL:		http://www.gtk.org/gtk-doc/
+# Packager:	Brett Goulder, predatorfreak at dcaf-security dot org.
+# Maintainer:	Oleksiy Khilkevich <grim@asu.ntu-kpi.kiev.ua>
+# Depends on:	gnome-doc-utils, python, openjade, doxbook-xml, docbook-xsl
+
+name=gtk-doc
+version=1.11
+release=1
+source=(http://ftp.gnome.org/pub/GNOME/sources/$name/$version/$name-$version.tar.bz2)
+
+build() {
+	cd $SRC/$name-$version
+
+	./configure --prefix=/usr \
+		--mandir=/usr/man
+	make
+	make DESTDIR=$PKG install
+}

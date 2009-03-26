@@ -1,0 +1,28 @@
+# Description: An SVG library based on libart
+# URL: http://librsvg.sourceforge.net/
+# Maintainer: Matt Housh, jaeger at morpheus dot net
+# Depends on: libxml2, gtk, libart_lgpl, cairo, xulrunner
+# Group: gnome/desktop
+
+name=librsvg
+version=2.22.3
+release=1
+source=(http://download.gnome.org/desktop/2.24/2.24.2/sources/$name-$version.tar.bz2)
+
+build() {
+	export CFLAGS="$CFLAGS -I/usr/include/xulrunner"
+	cd $name-$version
+	./configure --prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/man \
+		--enable-gtk-theme \
+		--enable-pixbuf-loader \
+		--disable-gtk-doc \
+		--disable-gnome-vfs \
+		--with-svgz \
+		--with-croco \
+		--with-cairo
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/{lib/{gimp,mozilla},share/{,gtk-}doc}
+}
