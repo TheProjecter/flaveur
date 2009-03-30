@@ -1,2 +1,4 @@
 .svn
 pkg.tar.gz
+.*~$
+.*orig$
