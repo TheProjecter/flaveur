@@ -4,7 +4,7 @@
 # Depends on:	git
 
 name=linux-2.6
-version=2.6.29-rc8
+version=2.6.32
 release=1
 source=(config)
 upstream=git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git
@@ -17,7 +17,7 @@ build() {
     fi
 
     cd $name
-    git pull
+    git pull || echo "Failed to get the updates, proceeding as is"
 
     # god bless unix shell
     mkdir -p $PKG/usr/src \
