@@ -17,4 +17,7 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
 
+	<!-- Serve static content from /static folder -->
+	<mvc:resources location="/static/" mapping="/static/*"/>
+	
 </beans>
