@@ -8,8 +8,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.0.5.RELEASE</spring.version>
-		<junit.version>4.8.2</junit.version>
+		<spring.version>${springVersion}</spring.version>
+		<junit.version>${junitVersion}</junit.version>
 	</properties>
 
 	<dependencies>

@@ -1,0 +1,47 @@
+Original Maven project lives at 
+    
+    http://flaveur.googlecode.com/svn/trunk/m2/baremvc
+
+How to use?
+-----------
+
+That's not an ready-to-go application, that's maven archetype, that helps 
+you create projects from scratch.
+
+To use it, you will first need to install this archetype into your local
+Maven repopsitory.
+
+1. Check out the sources or unpack the tarball and gor to baremvc folder.
+2. Install the archetype:
+
+    mvn install
+
+3. Enjoy!
+
+How to enjoy?
+-------------
+
+1. Go to where you want to create the simple Spring MVC project
+2. Create the project with
+
+mvn archetype:generate \
+    -DgroupId=org.example               \
+    -DarchetypeVersion=1.0              \
+    -DartifactId=baremvcapp             \
+    -Dversion=1.0-SNAPSHOT              \
+    -DinteractiveMode=false             \
+    -DarchetypeGroupId=org.example      \
+    -DarchetypeArtifactId=baremvc
+
+3. After that went ok and done you can go to baremvcapp folder
+4. Try it! Run tomcat with 
+
+    mvn tomcat:run
+    
+5. Access the application landind page at http://localhost:8080/baremvcapp/
+
+Thanks
+------
+
+Thanks for using this. If you have any comments/suggestions/etc feel free to
+drop them to oleksiy.khilkevich at gmail.com
