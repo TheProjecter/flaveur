@@ -38,10 +38,16 @@ mvn archetype:generate \
 
     mvn tomcat:run
     
-5. Access the application landind page at http://localhost:8080/baremvcapp/
+5. Access the application landing page at http://localhost:8080/baremvcapp/
 
 Thanks
 ------
 
 Thanks for using this. If you have any comments/suggestions/etc feel free to
 drop them to oleksiy.khilkevich at gmail.com
+
+Credits
+-------
+
+Credits go to Colin (http://blog.springsource.com/author/colins/) for his
+solid Spring tutorial and to @Rajeev for useful comments
