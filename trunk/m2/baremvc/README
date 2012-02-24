@@ -5,13 +5,13 @@ Original Maven project lives at
 How to use?
 -----------
 
-That's not an ready-to-go application, that's maven archetype, that helps 
+That's not a ready-to-go application, that's maven archetype, that helps 
 you create projects from scratch.
 
 To use it, you will first need to install this archetype into your local
-Maven repopsitory.
+Maven repository.
 
-1. Check out the sources or unpack the tarball and gor to baremvc folder.
+1. Check out the sources or unpack the tarball and go to baremvc folder.
 2. Install the archetype:
 
     mvn install
@@ -26,14 +26,14 @@ How to enjoy?
 
 mvn archetype:generate \
     -DgroupId=org.example               \
-    -DarchetypeVersion=1.0              \
     -DartifactId=baremvcapp             \
     -Dversion=1.0-SNAPSHOT              \
-    -DinteractiveMode=false             \
     -DarchetypeGroupId=org.example      \
-    -DarchetypeArtifactId=baremvc
+    -DarchetypeArtifactId=baremvc       \
+    -DarchetypeVersion=1.0              \
+    -DinteractiveMode=false
 
-3. After that went ok and done you can go to baremvcapp folder
+3. After that run and finished ok go to baremvcapp folder, that was created
 4. Try it! Run tomcat with 
 
     mvn tomcat:run
