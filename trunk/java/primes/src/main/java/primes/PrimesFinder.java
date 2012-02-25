@@ -5,7 +5,7 @@ import java.util.List;
 public class PrimesFinder {
 
     /**
-     * Finds all prime numbers, less or equal then given valueю
+     * Finds all prime numbers, less or equal then given value
      * Prime numbers are numbers that are divisible by themselves and 1 only. 1 is not considered prime.
      * @param max - prime number limit
      * @return collection of prime numbers found, never null
