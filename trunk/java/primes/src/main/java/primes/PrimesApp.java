@@ -23,7 +23,7 @@ public class PrimesApp {
             }
             System.out.print(primes.get(primes.size() - 1) + "\n");
         } else {
-            System.out.print("No primes found");
+            System.out.println("No primes found");
         }
     }
 }
