@@ -9,7 +9,7 @@ public class PrimesApp {
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        IPrimesFinder primesFinder = new PrimesFinder();
+        PrimesFinder primesFinder = new PrimesFinder();
         System.out.print("Enter the number: ");
         String userInput = reader.readLine();
         int number = Integer.parseInt(userInput);
